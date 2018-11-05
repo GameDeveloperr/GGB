@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public enum Stage
 {
-    None = -1, Tutorial, Stage1, Stage2
+    None = -1, Tutorial, Stage1, Stage2, EventStage
 };
 
 public class GameManager : MonoBehaviour {
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour {
     public TutorialManager T_Manager;
     public SoundManager _SoundManager;
     public Stage1_Manager _Stage1;
+    public EventMonsterM CreatM;
 
 
     //스테이지 변수 지정
@@ -137,6 +138,9 @@ public class GameManager : MonoBehaviour {
                 break;
             case Stage.Stage2:
                 SceneManager.LoadScene("Play_Mode 1");
+                break;
+            case Stage.EventStage:
+                SceneManager.LoadScene("EventStage");
                 break;
 
         }

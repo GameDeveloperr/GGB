@@ -142,11 +142,15 @@ public class EnemyBullet : MonoBehaviour {
                 GameManager.Instance._Bullet.ORB_Take_Damage(other);
                 GameManager.Instance._Bullet.ORB_Take_Damage(other);
 
-                if (enemy.Enemy_CurHp <= 0 && !enemy.Enemy_Death)
+                if (enemy.Enemy_CurHp <= 0 && !enemy.Enemy_Death && GameManager.Instance.curStage == Stage.Stage1)
                 {
                     GameManager.Instance._Stage1.Count--;
                     //Debug.Log("Count : "+GameManager.Instance._Stage1.Count);
                     GameManager.Instance.Stage1_Game_Clear();
+                    enemy.Death();
+                }
+                else if(enemy.Enemy_CurHp <= 0 && !enemy.Enemy_Death && GameManager.Instance.curStage == Stage.EventStage)
+                {
                     enemy.Death();
                 }
             }

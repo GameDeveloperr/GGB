@@ -63,13 +63,13 @@ public class OrbCtrl : MonoBehaviour
     private bool CheckEnemy()
     {//플레이어 기준으로 적 판단
         Collider2D[] colls = Physics2D.OverlapCircleAll(Player.position, AttackDist);
-
+        
         for (int i = 0; i != colls.Length; i++)
         {
-            if ((colls[i].CompareTag("ENEMY") || colls[i].CompareTag("ENEMY_MOB"))&& Target == null)
+            if ((colls[i].CompareTag("ENEMY") || colls[i].CompareTag("ENEMY_MOB") || colls[i].CompareTag("SLIME")) && Target == null)
             {
                 Target = colls[i].gameObject.transform;
-            }else if((colls[i].CompareTag("ENEMY") || colls[i].CompareTag("ENEMY_MOB")) && Target != null)
+            }else if((colls[i].CompareTag("ENEMY") || colls[i].CompareTag("ENEMY_MOB") || colls[i].CompareTag("SLIME")) && Target != null)
             {
                 if(Vector2.Distance(Player.position, Target.position) > Vector2.Distance(Player.position, colls[i].gameObject.transform.position))
                 {
@@ -88,8 +88,8 @@ public class OrbCtrl : MonoBehaviour
         }
         else {
             Orb_color.color = Color.white;
-
-            return false; }
+            return false;
+        }
     }
     IEnumerator OnBullet()
     {

@@ -12,9 +12,13 @@ public class SlimeCtrl : MonoBehaviour
     private CircleCollider2D _Coll;
     private Animator _Anim;
 
+    public int curHp;
+    public bool Die = false;
+
     // Use this for initialization
     void Start()
     {
+        Target = GameManager.Instance._PlayerC.transform;
         _Coll = GetComponent<CircleCollider2D>();
         _Anim = GetComponent<Animator>();
         StartCoroutine(TraceCheck());
@@ -75,5 +79,12 @@ public class SlimeCtrl : MonoBehaviour
             }
             GameManager.Instance._PlayerU.DeleteHP();
         }
+    }
+    public void Death()
+    {
+        if (GameManager.Instance.curStage == Stage.EventStage)
+            GameManager.Instance.CreatM.KillUp();
+        Die = true;
+        Destroy(transform.parent.gameObject);
     }
 }

@@ -134,6 +134,16 @@ public class ButtonCtrl : MonoBehaviour {
         GameManager.Instance.Choose_Stage(GameManager.Instance.curStage);
 
     }
+    public void EventStage_btn()
+    {
+        GameManager.Instance._SoundManager.Play_Sound(GameManager.Instance._SoundManager.Sound_icon_click);
+
+        Time.timeScale = 1.0f;
+
+        GameManager.Instance.curStage = Stage.EventStage;
+        GameManager.Instance.Choose_Stage(GameManager.Instance.curStage);
+
+    }
 
     public void NextStage_btn()
     {

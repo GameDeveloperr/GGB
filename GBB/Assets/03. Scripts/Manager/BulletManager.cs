@@ -50,14 +50,17 @@ public class BulletManager : MonoBehaviour {
             if (enemy.Enemy_CurHp < 0) enemy.Enemy_CurHp = 0;
 
         }
-
-
+        if (other.CompareTag("SLIME"))
+        {
+            SlimeCtrl enemy = other.GetComponent<SlimeCtrl>();
+            enemy.curHp -= 1;
+            if (enemy.curHp < 0) enemy.curHp = 0;
+        }
     }
 
     public void ORB_Take_Damage_Shield(Collider2D other)
     {
         BossCtrl boss = other.GetComponent<BossCtrl>();
         boss.CurShield_MP -= 1;
-
     }
 }

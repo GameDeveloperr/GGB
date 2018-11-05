@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01. Scenes/Play_Mode 1.unity
     guid: 92d927c22b8f68945aa3d01b4ccbec17
+  - enabled: 1
+    path: Assets/01. Scenes/EventStage.unity
+    guid: aa0ae81a58827d043adf764f90283bc1
   m_configObjects: {}

@@ -57,11 +57,15 @@ public class OrbBulletCtrl : MonoBehaviour {
             //Debug.Log(enemy.Enemy_CurHp);
             On = false;
 
-            if (enemy.Enemy_CurHp <= 0 && !enemy.Enemy_Death)
+            if (enemy.Enemy_CurHp <= 0 && !enemy.Enemy_Death && GameManager.Instance.curStage == Stage.Stage1)
             {
                 GameManager.Instance._Stage1.Count--;
                 //Debug.Log("count : " + GameManager.Instance._Stage1.Count);
                 GameManager.Instance.Stage1_Game_Clear();
+                enemy.Death();
+            }
+            else if (enemy.Enemy_CurHp <= 0 && !enemy.Enemy_Death && GameManager.Instance.curStage == Stage.EventStage)
+            {
                 enemy.Death();
             }
 
@@ -119,7 +123,20 @@ public class OrbBulletCtrl : MonoBehaviour {
             On = false;
         }
 
-       
+        if(other.gameObject.CompareTag("SLIME"))
+        {
+            GameManager.Instance._SoundManager.Play_Sound(GameManager.Instance._SoundManager.boss_damage);
+
+            SlimeCtrl enemy = other.GetComponent<SlimeCtrl>();
+
+            GameManager.Instance._Bullet.ORB_Take_Damage(other);
+
+            On = false;
+            if (enemy.curHp <= 0 && !enemy.Die && GameManager.Instance.curStage == Stage.EventStage)
+            {
+                enemy.Death();
+            }
+        }
 
     }
 

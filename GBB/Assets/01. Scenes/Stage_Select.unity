@@ -283,6 +283,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114064828313108040, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224537979065304252, guid: b75a7484424539b4bb37981bbdb18987,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -378,9 +383,60 @@ Prefab:
       propertyPath: m_ScreenMatchMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114638758218174406, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114638758218174406, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114638758218174406, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064828313108040, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064828313108040, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064828313108040, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1150962847}
+    - target: {fileID: 114064828313108040, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EventStage_btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064828313108040, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277389815706402, guid: b75a7484424539b4bb37981bbdb18987,
+        type: 2}
+      propertyPath: m_Text
+      value: EventStage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b75a7484424539b4bb37981bbdb18987, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1150962847 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114844040544645436, guid: b75a7484424539b4bb37981bbdb18987,
+    type: 2}
+  m_PrefabInternal: {fileID: 1150962846}
+  m_Script: {fileID: 11500000, guid: 137ce93b227c03941b59db5483c6128f, type: 3}
 --- !u!1 &1223517544
 GameObject:
   m_ObjectHideFlags: 0

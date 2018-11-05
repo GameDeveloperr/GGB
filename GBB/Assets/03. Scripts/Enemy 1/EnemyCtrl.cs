@@ -192,6 +192,8 @@ public class EnemyCtrl : MonoBehaviour {
 
     public void Death()
     {
+        if (GameManager.Instance.curStage == Stage.EventStage)
+            GameManager.Instance.CreatM.KillUp();
         Enemy_Death = true;
         Transform ef = Instantiate(DieEffect, transform.position, Quaternion.identity);
         Destroy(ef.gameObject, 1.5f);
