@@ -7,6 +7,8 @@ public class EventMonsterM : MonoBehaviour {
 
     public Text CountText;
     public Text CreateCountText;
+
+    public Text DeathCount;
     public int KillCount = 0;
 
     public Transform[] CreateType = new Transform[3];
@@ -54,6 +56,7 @@ public class EventMonsterM : MonoBehaviour {
     {
         KillCount++;
         CountText.text = "KillCount : " + KillCount.ToString();
+        DeathCount.text = CountText.text;
     }
     IEnumerator CheckNext()
     {
